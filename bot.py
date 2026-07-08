@@ -130,22 +130,8 @@ def main():
 
     application = Application.builder().token(BOT_TOKEN).build()
 
-    application.add_handler(
-        CommandHandler("start", start)
-    )
+    application.add_handler(CommandHandler("start", start))
+    application.add_handler(CallbackQueryHandler(check_join))
+    application.add_handler(CallbackQueryHandler(buttons))
 
-    application.add_handler(
-        CallbackQueryHandler(check_join, pattern="^check$")
-    )
-
-    application.add_handler(
-        CallbackQueryHandler(buttons)
-    )
-
-    print("Bot Started Successfully...")
-
-    application.run_polling()
-
-
-if __name__ == "__main__":
-    main()
+    application.run_polling(close_loop=False)
