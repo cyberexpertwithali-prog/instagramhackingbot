@@ -126,7 +126,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     elif data == "module5":
         pass
-      def main():
+def main():
 
     application = Application.builder().token(BOT_TOKEN).build()
 
