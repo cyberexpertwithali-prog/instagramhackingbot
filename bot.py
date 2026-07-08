@@ -1,4 +1,4 @@
-import os
+import asyncio
 import logging
 from flask import Flask
 from telegram import (
@@ -127,6 +127,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif data == "module5":
         pass
 def main():
+    asyncio.set_event_loop(asyncio.new_event_loop())
 
     application = Application.builder().token(BOT_TOKEN).build()
 
