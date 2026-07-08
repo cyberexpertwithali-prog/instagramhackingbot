@@ -128,7 +128,6 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif data == "module5":
         pass
 def main():
-    asyncio.set_event_loop(asyncio.new_event_loop())
 
     application = Application.builder().token(BOT_TOKEN).build()
 
@@ -136,4 +135,6 @@ def main():
     application.add_handler(CallbackQueryHandler(check_join))
     application.add_handler(CallbackQueryHandler(buttons))
 
-    application.run_polling(close_loop=False)
+    print("Bot Started Successfully...")
+
+    application.run_po
