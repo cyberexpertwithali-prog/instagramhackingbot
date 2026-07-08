@@ -137,4 +137,7 @@ def main():
 
     print("Bot Started Successfully...")
 
-    asyncio.run(application.run_polling())
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+
+    application.run_polling()
