@@ -129,12 +129,14 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         pass
 def main():
 
+    print("MAIN FUNCTION STARTED")
+
     application = Application.builder().token(BOT_TOKEN).build()
 
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CallbackQueryHandler(check_join))
     application.add_handler(CallbackQueryHandler(buttons))
 
-    print("Bot Started Successfully...")
+    print("BOT IS RUNNING")
 
-    application.run_po
+    application.run_polling()
