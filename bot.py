@@ -105,7 +105,7 @@ async def check_join(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     await menu(update, context)
-  async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     query = update.callback_query
     await query.answer()
