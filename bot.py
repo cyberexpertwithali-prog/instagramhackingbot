@@ -128,12 +128,12 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif data == "module5":
         pass
 def main():
-    application = Application.builder().token(BOT_TOKEN).build()
+application = Application.builder().token(BOT_TOKEN).build()
 
     application.add_handler(CommandHandler("start", start))
 
-    application.add_handler(
-        CallbackQueryHandler(check_join, pattern="^check$")
+ application.add_handler(
+ CallbackQueryHandler(check_join, pattern="^check$")
     )
 
     application.add_handler(
