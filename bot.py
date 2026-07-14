@@ -138,3 +138,5 @@ def main():
     print("Bot Started Successfully...")
 
     application.run_polling()
+if __name__ == "__main__":
+    main()
