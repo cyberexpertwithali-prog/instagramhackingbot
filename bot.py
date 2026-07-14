@@ -128,15 +128,23 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif data == "module5":
         pass
 def main():
-
     application = Application.builder().token(BOT_TOKEN).build()
 
     application.add_handler(CommandHandler("start", start))
-    application.add_handler(CallbackQueryHandler(check_join))
-    application.add_handler(CallbackQueryHandler(buttons))
+
+    application.add_handler(
+        CallbackQueryHandler(check_join, pattern="^check$")
+    )
+
+    application.add_handler(
+        CallbackQueryHandler(
+            buttons,
+            pattern="^(module1|module2|module3|module4|module5)$"
+        )
+    )
 
     print("Bot Started Successfully...")
 
-    application.run_polling()
-if __name__ == "__main__":
-    main()
+    application.run_polling(
+        drop_pending_updates=True
+    )
